@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TacoParserV2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7ac30f2cbf24797b387cb4486ba0dd613716636")]
 [assembly: System.Reflection.AssemblyProductAttribute("TacoParserV2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TacoParserV2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -13,24 +13,35 @@ namespace LoggingKata;
 class Program
 {
     static readonly ILog logger = new TacoLogger();
-    //const string csvPath1 = "TacoBell-US-AL.csv";
-    const string csvPath2 = "TacoBellCanada.csv";
-    const string csvPath3 = "TacoBellAlabamaLocations.csv";
+    const string csvPath1 = "TacoBellCanada.csv";
+    const string csvPath2 = "TacoBellAlabamaLocations.csv";
     static void Main(string[] args)
     {
-        /*
         // Load the .env file
         string filepath = "secret.env";
         Env.Load(@"../../../" + filepath);
 
+        string urlCanadianCity = "https://locations.tacobell.ca/en/ab/edmonton";
+        WebScraper_SingleCanadianCity scraperSingleCan = new WebScraper_SingleCanadianCity(urlCanadianCity);
+
+        string urlAllCanadianCities = "https://www.tacobell.ca/en/store-locator.html";
+        WebScraper_ALLCanadianCities scraperAllCan = new WebScraper_ALLCanadianCities(urlAllCanadianCities);
+
+        string urlUSCity = "https://locations.tacobell.com/al/oxford.html";
+        WebScraper_SingleUSCity scraperSingleUS = new WebScraper_SingleUSCity(urlUSCity);
+
+        //string urlAllStateCities = "https://locations.tacobell.com/al.html";
+        //WebScraper_ALLStateCities scraperAllState = new WebScraper_ALLStateCities(urlAllStateCities);
+
         try
         {
-            WebScraper_ALLStateCities.RunWebScraper().Wait();
+            scraperSingleUS.RunWebScraper().Wait();
+            //WebScraper_SingleUSCity.RunWebScraper().Wait();
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
-        }*/
+        }
 
         // Objective: Find the two Taco Bells that are the farthest apart from one another. 
 
@@ -67,6 +78,6 @@ class Program
             }
         }
 
-        Console.WriteLine($"The two tacobells with the furthest distance are:\nName A: {locA.Name}\nLatitude: {locA.Location.Latitude}\tLongitude: {locA.Location.Longitude}\nName B: {locB.Name}\tLatitude: {locB.Location.Latitude}\tLongitude: {locB.Location.Longitude}\n");
+        Console.WriteLine($"The two tacobells with the furthest distance are:\nName A: {locA.Name}\nLatitude: {locA.Location.Latitude}\tLongitude: {locA.Location.Longitude}\n\nName B: {locB.Name}\nLatitude: {locB.Location.Latitude}\tLongitude: {locB.Location.Longitude}");
     }
 }
