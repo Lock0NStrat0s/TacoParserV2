@@ -6,46 +6,67 @@ using TacoParserV2.Models;
 using TacoParserV2.Logger;
 using System.Collections.Generic;
 using DotNetEnv;
+using TacoParserV2.API;
 
 namespace TacoParserV2;
 
 class Program
 {
     static readonly ILog logger = new TacoLogger();
-    const string csvPath1 = "TacoBellCanada.csv";
-    const string csvPath2 = "TacoBellAlabamaLocations.csv";
+    const string csvPath = "TempTacoBellLocations.csv";     // Generated locations of temporary Taco Bell locations using this program
+    const string csvPath1 = "TacoBellCanada.csv";           // Generated locations of all Canadian Taco Bell locations
+    const string csvPath2 = "TacoBellAlabamaLocations.csv"; // Generated locations of all Alabama Taco Bell locations
     static void Main(string[] args)
     {
         // Load the .env file
-        string filepath = "secret.env";
-        Env.Load(@"../../../" + filepath);
+        LoadEnv();
+        string path = UserSelectionGetRecords();
+        FindLocationsFurthestApart(path);
+    }
 
+    private static string UserSelectionGetRecords()
+    {
         //string urlCanadianCity = "https://locations.tacobell.ca/en/ab/edmonton";
         string urlCanadianCity = "https://locations.tacobell.ca/en/bc/surrey";
         WebScraper_SingleCanadianCity scraperSingleCan = new WebScraper_SingleCanadianCity(urlCanadianCity);
 
-        string urlAllCanadianCities = "https://www.tacobell.ca/en/store-locator.html";
-        WebScraper_ALLCanadianCities scraperAllCan = new WebScraper_ALLCanadianCities(urlAllCanadianCities);
+        WebScraper_ALLCanadianCities scraperAllCan = new WebScraper_ALLCanadianCities();
 
         //string urlUSCity = "https://locations.tacobell.com/al/oxford.html";
-        string urlUSCity = "https://locations.tacobell.com/ms/flowood.html";
+        string urlUSCity = "https://locations.tacobell.com/al/decatur.html";
         WebScraper_SingleUSCity scraperSingleUS = new WebScraper_SingleUSCity(urlUSCity);
-
-        //string urlAllStateCities = "https://locations.tacobell.com/al.html";
-        //WebScraper_ALLStateCities scraperAllState = new WebScraper_ALLStateCities(urlAllStateCities);
 
         try
         {
-            scraperSingleUS.RunWebScraper().Wait();
+            //scraperSingleUS.RunWebScraper().Wait();
+            scraperAllCan.RunWebScraper().Wait();
         }
         catch (Exception ex)
         {
             Console.WriteLine(ex.Message);
         }
 
+        return csvPath1;
+    }
+
+    private static void LoadEnv()
+    {
+        string filepath = "secret.env";
+        try
+        {
+            Env.Load(@"../../../" + filepath);
+        }
+        catch (FileNotFoundException)
+        {
+            logger.LogError("File not found.");
+        }
+    }
+
+    private static void FindLocationsFurthestApart(string csvPath)
+    {
         // Objective: Find the two Taco Bells that are the farthest apart from one another. 
 
-        string[] lines = File.ReadAllLines(@"../../../CSV_Files/" + csvPath2).Skip(1).ToArray();
+        string[] lines = File.ReadAllLines(@"../../../CSV_Files/" + csvPath).Skip(1).ToArray();
 
         if (lines.Length == 0)
         {

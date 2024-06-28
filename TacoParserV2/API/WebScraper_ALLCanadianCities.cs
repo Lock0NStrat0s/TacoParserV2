@@ -15,8 +15,17 @@ namespace TacoParserV2;
 
 public class WebScraper_ALLCanadianCities : WebScraper_Base
 {
-    public WebScraper_ALLCanadianCities(string url) : base(url)
+    protected override async Task ConvertToGeoLocationUsingAPI(List<string> locations)
     {
+        // THIS WILL CONVERT THE FIRST X LOCATIONS IN THE STATE YOU SELECT FOR DEMO PURPOSES
+        // TO VIEW ALL, CHANGE THE VALUE OF recordsToExtract TO locations.Count
+        List<TacoBellLocation> tbList = new List<TacoBellLocation>();
+        int recordsToExtract = 4;
+        for (int i = 0; i < recordsToExtract; i++)
+        {
+            var locModel = await API_AddressToCoords.RunAPI(locations[i]);
+            tbList.Add(locModel);
+        }
     }
 
     protected override HtmlNodeCollection SelectHTMLNodes(HtmlDocument document)

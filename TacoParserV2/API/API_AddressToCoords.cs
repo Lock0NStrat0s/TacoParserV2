@@ -12,6 +12,7 @@ public static class API_AddressToCoords
     static readonly ILog logger = new TacoLogger();
     public static async Task<TacoBellLocation> RunAPI(string address)
     {
+        // SIGN UP FOR AN ACCOUNT AT https://opencagedata.com/users/sign_up TO GET YOUR API KEY FOR TESTING
         string apiKey = Environment.GetEnvironmentVariable("API_KEY");
         
         TacoBellLocation coordinates = new TacoBellLocation();

@@ -16,10 +16,13 @@ namespace TacoParserV2;
 public abstract class WebScraper_Base
 {
     // Url of any city in the US
-    // Url of any state in the US
     // Url of any Canadian city
     // Url of all Canadian cities
-    private string _url { get; set; }
+    private string _url { get; set; } = "https://www.tacobell.ca/en/store-locator.html";
+
+    protected WebScraper_Base()
+    {
+    }
 
     protected WebScraper_Base(string url)
     {
@@ -38,6 +41,11 @@ public abstract class WebScraper_Base
             Console.WriteLine($"Error: {e.Message}");
         }
 
+        await ConvertToGeoLocationUsingAPI(locations);
+    }
+
+    protected virtual async Task ConvertToGeoLocationUsingAPI(List<string> locations)
+    {
         List<TacoBellLocation> tbList = new List<TacoBellLocation>();
         foreach (var location in locations)
         {
@@ -45,6 +53,14 @@ public abstract class WebScraper_Base
 
             tbList.Add(locModel);
         }
+
+        SelectLocationAndWriteToCSV(tbList);
+    }
+
+    protected virtual void SelectLocationAndWriteToCSV(List<TacoBellLocation> tbList)
+    {
+        // Write the data to a CSV file to a location of your choice
+        WriteToCsv(@"../../../CSV_Files/TempTacoBellLocations.csv", tbList);
     }
 
     protected virtual async Task<List<string>> GetTacoBellLocations(string url)
