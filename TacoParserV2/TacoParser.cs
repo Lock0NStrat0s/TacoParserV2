@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using LoggingKata.Logger;
-using LoggingKata.Models;
+using TacoParserV2.Logger;
+using TacoParserV2.Models;
 
-namespace LoggingKata;
+namespace TacoParserV2;
 
 /// <summary>
 /// Parses a POI file to locate all the Taco Bells

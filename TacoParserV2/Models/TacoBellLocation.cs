@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoggingKata.Models;
+namespace TacoParserV2.Models;
 
 public class TacoBellLocation : ITrackable
 {

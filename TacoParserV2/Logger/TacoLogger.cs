@@ -1,6 +1,7 @@
 ﻿using System;
+using TacoParserV2.Models;
 
-namespace LoggingKata.Logger;
+namespace TacoParserV2.Logger;
 
 public class TacoLogger : ILog
 {
@@ -27,5 +28,26 @@ public class TacoLogger : ILog
     public void LogDebug(string log)
     {
         Console.WriteLine($"Debug: {log}");
+    }
+
+    public void LogResults(TacoBellLocation coordinates)
+    {
+        Random random = new Random();
+        Console.Beep(5000, 500);
+        Console.ForegroundColor = (random.Next(1, 11)) switch
+        {
+            1 => ConsoleColor.Red,
+            2 => ConsoleColor.White,
+            3 => ConsoleColor.Blue,
+            4 => ConsoleColor.Yellow,
+            5 => ConsoleColor.Magenta,
+            6 => ConsoleColor.Cyan,
+            7 => ConsoleColor.DarkBlue,
+            8 => ConsoleColor.DarkGreen,
+            9 => ConsoleColor.DarkMagenta,
+            10 => ConsoleColor.DarkYellow,
+            _ => ConsoleColor.Green
+        };
+        Console.WriteLine($"Latitude: {coordinates.Location.Latitude}\tLongitude: {coordinates.Location.Longitude}\nAddress: {coordinates.Name}\n\n");
     }
 }

@@ -1,7 +1,7 @@
 ﻿using CsvHelper.Configuration;
 using CsvHelper;
 using HtmlAgilityPack;
-using LoggingKata.Models;
+using TacoParserV2.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -11,11 +11,14 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TacoParserV2.API;
+namespace TacoParserV2;
 
 public abstract class WebScraper_Base
 {
-    // Url of any city/state in the US OR any Canadian city
+    // Url of any city in the US
+    // Url of any state in the US
+    // Url of any Canadian city
+    // Url of all Canadian cities
     private string _url { get; set; }
 
     protected WebScraper_Base(string url)

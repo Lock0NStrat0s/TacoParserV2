@@ -1,4 +1,4 @@
-﻿namespace LoggingKata.Models;
+﻿namespace TacoParserV2.Models;
 
 public struct Point
 {

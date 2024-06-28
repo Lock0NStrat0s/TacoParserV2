@@ -1,7 +1,7 @@
 ﻿using CsvHelper.Configuration;
 using CsvHelper;
 using HtmlAgilityPack;
-using LoggingKata.Models;
+using TacoParserV2.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -10,9 +10,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Net.Http.Headers;
-using TacoParserV2.API;
 
-namespace LoggingKata.API;
+namespace TacoParserV2;
 
 public class WebScraper_SingleCanadianCity : WebScraper_Base
 {

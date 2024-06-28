@@ -1,27 +1,32 @@
-﻿using LoggingKata.Models;
-using LoggingKata.Responses;
+﻿using TacoParserV2.Models;
+using TacoParserV2.Responses;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using TacoParserV2.Logger;
 
 public static class API_AddressToCoords
 {
+    static readonly ILog logger = new TacoLogger();
     public static async Task<TacoBellLocation> RunAPI(string address)
     {
         string apiKey = Environment.GetEnvironmentVariable("API_KEY");
-
+        
         TacoBellLocation coordinates = new TacoBellLocation();
         try
         {
             coordinates = await GetCoordinatesFromAddress(address, apiKey);
-            Console.WriteLine($"Latitude: {coordinates.Location.Latitude}\tLongitude: {coordinates.Location.Longitude}\tAddress: {coordinates.Name}");
+
+            logger.LogResults(coordinates);
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error: {ex.Message}");
         }
+
+        Console.ForegroundColor = ConsoleColor.Green;
 
         return coordinates;
     }

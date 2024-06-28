@@ -1,5 +1,6 @@
 ﻿using System;
-namespace LoggingKata.Logger
+using TacoParserV2.Models;
+namespace TacoParserV2.Logger
 {
     public interface ILog
     {
@@ -8,5 +9,6 @@ namespace LoggingKata.Logger
         void LogWarning(string log);
         void LogInfo(string log);
         void LogDebug(string log);
+        void LogResults(TacoBellLocation coordinates);
     }
 }

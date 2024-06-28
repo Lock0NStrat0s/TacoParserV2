@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoggingKata.Responses;
+namespace TacoParserV2.Responses;
 
 public class SingleResponseTacoBellLocationResponse
 {

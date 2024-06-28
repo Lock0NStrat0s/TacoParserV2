@@ -111,3 +111,4 @@ C:\Users\moham\OneDrive\Desktop\Repos\TRUECODERS\TacoParserV2\TacoParserV2.Test\
 C:\Users\moham\OneDrive\Desktop\Repos\TRUECODERS\TacoParserV2\TacoParserV2.Test\obj\Debug\net8.0\TacoParserV2.Test.pdb
 C:\Users\moham\OneDrive\Desktop\Repos\TRUECODERS\TacoParserV2\TacoParserV2.Test\obj\Debug\net8.0\TacoParserV2.Test.genruntimeconfig.cache
 C:\Users\moham\OneDrive\Desktop\Repos\TRUECODERS\TacoParserV2\TacoParserV2.Test\obj\Debug\net8.0\ref\TacoParserV2.Test.dll
+C:\Users\moham\OneDrive\Desktop\Repos\TRUECODERS\TacoParserV2\TacoParserV2.Test\obj\Debug\net8.0\TacoParserV2.Test.sourcelink.json

@@ -2,13 +2,12 @@
 using System.Linq;
 using System.IO;
 using GeoCoordinatePortable;
-using LoggingKata.API;
-using LoggingKata.Models;
-using LoggingKata.Logger;
+using TacoParserV2.Models;
+using TacoParserV2.Logger;
 using System.Collections.Generic;
 using DotNetEnv;
 
-namespace LoggingKata;
+namespace TacoParserV2;
 
 class Program
 {
@@ -21,13 +20,15 @@ class Program
         string filepath = "secret.env";
         Env.Load(@"../../../" + filepath);
 
-        string urlCanadianCity = "https://locations.tacobell.ca/en/ab/edmonton";
+        //string urlCanadianCity = "https://locations.tacobell.ca/en/ab/edmonton";
+        string urlCanadianCity = "https://locations.tacobell.ca/en/bc/surrey";
         WebScraper_SingleCanadianCity scraperSingleCan = new WebScraper_SingleCanadianCity(urlCanadianCity);
 
         string urlAllCanadianCities = "https://www.tacobell.ca/en/store-locator.html";
         WebScraper_ALLCanadianCities scraperAllCan = new WebScraper_ALLCanadianCities(urlAllCanadianCities);
 
-        string urlUSCity = "https://locations.tacobell.com/al/oxford.html";
+        //string urlUSCity = "https://locations.tacobell.com/al/oxford.html";
+        string urlUSCity = "https://locations.tacobell.com/ms/flowood.html";
         WebScraper_SingleUSCity scraperSingleUS = new WebScraper_SingleUSCity(urlUSCity);
 
         //string urlAllStateCities = "https://locations.tacobell.com/al.html";
@@ -36,7 +37,6 @@ class Program
         try
         {
             scraperSingleUS.RunWebScraper().Wait();
-            //WebScraper_SingleUSCity.RunWebScraper().Wait();
         }
         catch (Exception ex)
         {
@@ -78,6 +78,6 @@ class Program
             }
         }
 
-        Console.WriteLine($"The two tacobells with the furthest distance are:\nName A: {locA.Name}\nLatitude: {locA.Location.Latitude}\tLongitude: {locA.Location.Longitude}\n\nName B: {locB.Name}\nLatitude: {locB.Location.Latitude}\tLongitude: {locB.Location.Longitude}");
+        //Console.WriteLine($"The two tacobells with the furthest distance are:\nName A: {locA.Name}\nLatitude: {locA.Location.Latitude}\tLongitude: {locA.Location.Longitude}\n\nName B: {locB.Name}\nLatitude: {locB.Location.Latitude}\tLongitude: {locB.Location.Longitude}");
     }
 }

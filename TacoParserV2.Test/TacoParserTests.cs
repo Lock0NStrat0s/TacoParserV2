@@ -1,7 +1,8 @@
 using System;
+using TacoParserV2;
 using Xunit;
 
-namespace LoggingKata.Test;
+namespace TacoParserTests;
 
 public class TacoParserTests
 {
