@@ -49,4 +49,6 @@ The folowing packages are installed from the NuGet Package Manager:
   + All Canadian cities:
     + URL fixed: https://www.tacobell.ca/en/store-locator.html
   + All US State cities:
-    + URL adjustable: Pick from these [Taco Bell State Locations](https://locations.tacobell.com/) and use the URL of the State
+    + URL adjustable: Pick from these [Taco Bell State Locations](https://locations.tacobell.com/)
+    + Use the URL of the State with the format -- *`https://locations.tacobell.com/[STATE].html`* --
+    + Example: https://locations.tacobell.com/al.html
