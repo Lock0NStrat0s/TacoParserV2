@@ -21,7 +21,7 @@ This project demonstrates web scraping, API interaction, and data storage techni
 3. Unit Testing:
 -  Checks if address, latitude and longitude match their respective values
 
-## Install dependencies:
+## Install dependencies
 The folowing packages are installed from the NuGet Package Manager:
 - HtmlAgilityPack
 - CsvHelper
@@ -31,11 +31,11 @@ The folowing packages are installed from the NuGet Package Manager:
 - DotNetEnv
 
 ## Usage
-### Configure API Key:
+#### Configure API Key:
 - You need an API key from OpenCage Geocoder. Sign up on their [website](https://opencagedata.com/) to get your API key for testing purposes
 
-### Set the API key:
+#### Set the API key:
 - You can store this in an .ENV file using this format -- *API_KEY=YOUR_KEY* -- in the main project directory
 
-### URL for testing:
+#### URL for testing:
 - The URL can be manually adjusted to fit your needs
