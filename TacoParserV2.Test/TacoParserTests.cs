@@ -1,6 +1,8 @@
 using System;
+using System.Diagnostics.Metrics;
 using TacoParserV2;
 using Xunit;
+using static TacoParserV2.Responses.SingleResponseTacoBellLocationResponse;
 
 namespace TacoParserTests;
 
@@ -11,28 +13,18 @@ public class TacoParserTests
     {
         //Arrange
         var tacoParser = new TacoParser();
-
         //Act
-        var actual = tacoParser.Parse("34.073638,-84.677017,Taco Bell Acwort...");
-
+        var actual = tacoParser.Parse("Marshall County AL 35950 United States of America,34.2739,-86.2064");
         //Assert
         Assert.NotNull(actual);
-
     }
 
     [Theory]
-    [InlineData("34.073638,-84.677017,Taco Bell Acwort...", -84.677017)]
-    [InlineData("34.035985,-84.683302,Taco Bell Acworth...", -84.683302)]
-    [InlineData("34.087508,-84.575512,Taco Bell Acworth...", -84.575512)]
-    //Add additional inline data. Refer to your CSV file.
+    [InlineData("Marshall County AL 35950 United States of America,34.2739,-86.2064", -86.2064)]
+    [InlineData("1740 Gunter Avenue Mill Village Guntersville AL 35976 United States of America,34.3420432,-86.3082118", -86.3082118)]
+    [InlineData("Taco Bell 710 9th Avenue North Skyview Bessemer AL 35020 United States of America,33.3936458,-86.9726679", -86.9726679)]
     public void ShouldParseLongitude(string line, double expected)
     {
-        // TODO: Complete the test with Arrange, Act, Assert steps below.
-        //       Note: "line" string represents input data we will Parse 
-        //       to extract the Longitude.  
-        //       Each "line" from your .csv file
-        //       represents a TacoBell location
-
         //Arrange
         var tacoParser = new TacoParser();
         //Act
@@ -41,12 +33,10 @@ public class TacoParserTests
         Assert.Equal(expected, actual);
     }
 
-
-    //TODO: Create a test called ShouldParseLatitude
     [Theory]
-    [InlineData("34.073638,-84.677017,Taco Bell Acwort...", 34.073638)]
-    [InlineData("34.035985,-84.683302,Taco Bell Acworth...", 34.035985)]
-    [InlineData("34.087508,-84.575512,Taco Bell Acworth...", 34.087508)]
+    [InlineData("Marshall County AL 35950 United States of America,34.2739,-86.2064", 34.2739)]
+    [InlineData("1740 Gunter Avenue Mill Village Guntersville AL 35976 United States of America,34.3420432,-86.3082118", 34.3420432)]
+    [InlineData("Taco Bell 710 9th Avenue North Skyview Bessemer AL 35020 United States of America,33.3936458,-86.9726679", 33.3936458)]
     public void ShouldParseLatitude(string line, double expected)
     {
         //Arrange
@@ -58,10 +48,10 @@ public class TacoParserTests
     }
 
     [Theory]
-    [InlineData("34.073638,-84.677017,Taco Bell Acwort...", "Taco Bell Acwort...")]
-    [InlineData("34.035985,-84.683302,Taco Bell Acworth...", "Taco Bell Acworth...")]
-    [InlineData("34.087508,-84.575512,Taco Bell Acworth...", "Taco Bell Acworth...")]
-    public void ShouldParseStoreName(string line, string expected)
+    [InlineData("Marshall County AL 35950 United States of America,34.2739,-86.2064", "Marshall County AL 35950 United States of America")]
+    [InlineData("1740 Gunter Avenue Mill Village Guntersville AL 35976 United States of America,34.3420432,-86.3082118", "1740 Gunter Avenue Mill Village Guntersville AL 35976 United States of America")]
+    [InlineData("Taco Bell 710 9th Avenue North Skyview Bessemer AL 35020 United States of America,33.3936458,-86.9726679", "Taco Bell 710 9th Avenue North Skyview Bessemer AL 35020 United States of America")]
+    public void ShouldParseStoreAddress(string line, string expected)
     {
         //Arrange
         var tacoParser = new TacoParser();
