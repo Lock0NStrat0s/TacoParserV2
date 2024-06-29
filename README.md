@@ -5,7 +5,9 @@ This project is a C# console application that:
 3. Implements unit testing with XUnit
 
 ## Introduction
-The Taco Bell Location Scraper project aims to automate the process of collecting Taco Bell location addresses from their official website, converting these addresses to geographic coordinates (latitude and longitude), and saving the information in a CSV file. This project demonstrates web scraping, API interaction, and data storage techniques in C#.
+The Taco Bell Location Scraper project aims to automate the process of collecting Taco Bell location addresses from their official website, converting these addresses to geographic coordinates (latitude and longitude), and saving the information in a CSV file.
+Once stored, the data is parsed through to extract the name and location to be used for geolocation and determining the distance between all the Taco bells.
+This project demonstrates web scraping, API interaction, and data storage techniques in C#.
 
 ## Features
 1. Web Scraping and API:
@@ -30,7 +32,10 @@ The folowing packages are installed from the NuGet Package Manager:
 
 ## Usage
 ### Configure API Key:
-You need an API key from OpenCage Geocoder. Sign up on their [website](https://opencagedata.com/) to get your API key for testing purposes.
+- You need an API key from OpenCage Geocoder. Sign up on their [website](https://opencagedata.com/) to get your API key for testing purposes
 
 ### Set the API key:
-You can store this in an .ENV file using this format --> *API_KEY=YOUR_KEY*
+- You can store this in an .ENV file using this format --> *API_KEY=YOUR_KEY*
+
+### URL for testing:
+- The URL can be manually adjusted to fit your needs
