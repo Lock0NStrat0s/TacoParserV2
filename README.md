@@ -11,24 +11,24 @@ This project demonstrates web scraping, API interaction, and data storage techni
 
 ## Features
 1. Web Scraping and API:
-- Scrapes location addresses from Taco Bell's website
-- Converts addresses to geographic coordinates using the OpenCage Geocoder API
-- Stores the address and coordinates in a CSV file
+  - Scrapes location addresses from Taco Bell's website
+  - Converts addresses to geographic coordinates using the OpenCage Geocoder API
+  - Stores the address and coordinates in a CSV file
 
 2. GeoLocation:
-- Finds the two Taco Bells that are the farthest apart from one another and shows the distance between them
+  - Finds the two Taco Bells that are the farthest apart from one another and shows the distance between them
 
 3. Unit Testing:
--  Checks if address, latitude and longitude match their respective values
+  -  Checks if address, latitude and longitude match their respective values
 
 ## Install dependencies
 The folowing packages are installed from the NuGet Package Manager:
-- HtmlAgilityPack
-- CsvHelper
-- Newtonsoft.Json
-- GeoCoordinate.NetCore
-- XUnit
-- DotNetEnv
+  - HtmlAgilityPack
+  - CsvHelper
+  - Newtonsoft.Json
+  - GeoCoordinate.NetCore
+  - XUnit
+  - DotNetEnv
 
 ## Usage
 #### Configure API Key:
@@ -39,4 +39,9 @@ The folowing packages are installed from the NuGet Package Manager:
 - You can store this in an .ENV file using this format -- *API_KEY=YOUR_KEY* -- in the main project directory
 
 #### URL for testing:
-- The URL can be manually adjusted to fit your needs
+- Web Scraper Details:
+  - 4 scrapers have been built in this program:
+    + Single Canadian city -> URL adjustable: Select any Canadian location with the format -- *https://locations.tacobell.ca/en/[PROVINCE]/[CITY]* -- for example: https://locations.tacobell.ca/en/ab/edmonton
+    + Single US city -> URL adjustable: Select any US location with the format -- *https://locations.tacobell.com/[STATE]/[CITY].html* -- for example: https://locations.tacobell.com/al/huntsville.html
+    + All Canadian cities -> URL fixed: https://www.tacobell.ca/en/store-locator.html
+    + All US State cities -> URL adjustable: Pick from these [Taco Bell State Locations](https://locations.tacobell.com/) and use the URL of the State
