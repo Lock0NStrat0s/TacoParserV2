@@ -39,9 +39,8 @@ The folowing packages are installed from the NuGet Package Manager:
 - You can store this in an .ENV file using this format -- *API_KEY=YOUR_KEY* -- in the main project directory
 
 #### URL for testing:
-- Web Scraper Details:
-  - 4 scrapers have been built in this program:
-    + Single Canadian city -> URL adjustable: Select any Canadian location with the format -- *`https://locations.tacobell.ca/en/[PROVINCE]/[CITY]`* -- for example: https://locations.tacobell.ca/en/ab/edmonton
-    + Single US city -> URL adjustable: Select any US location with the format -- *`https://locations.tacobell.com/[STATE]/[CITY].html`* -- for example: https://locations.tacobell.com/al/huntsville.html
-    + All Canadian cities -> URL fixed: https://www.tacobell.ca/en/store-locator.html
-    + All US State cities -> URL adjustable: Pick from these [Taco Bell State Locations](https://locations.tacobell.com/) and use the URL of the State
+- 4 scrapers have been built in this program:
+  + Single Canadian city -> URL adjustable: Select any Canadian location with the format -- *`https://locations.tacobell.ca/en/[PROVINCE]/[CITY]`* -- for example: https://locations.tacobell.ca/en/ab/edmonton
+  + Single US city -> URL adjustable: Select any US location with the format -- *`https://locations.tacobell.com/[STATE]/[CITY].html`* -- for example: https://locations.tacobell.com/al/huntsville.html
+  + All Canadian cities -> URL fixed: https://www.tacobell.ca/en/store-locator.html
+  + All US State cities -> URL adjustable: Pick from these [Taco Bell State Locations](https://locations.tacobell.com/) and use the URL of the State
