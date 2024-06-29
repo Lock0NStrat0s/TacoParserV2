@@ -10,6 +10,8 @@ using TacoParserV2.Logger;
 public static class API_AddressToCoords
 {
     static readonly ILog logger = new TacoLogger();
+
+    // This method will call the API and return the coordinates of the address
     public static async Task<TacoBellLocation> RunAPI(string address)
     {
         // SIGN UP FOR AN ACCOUNT AT https://opencagedata.com/users/sign_up TO GET YOUR API KEY FOR TESTING
@@ -32,6 +34,7 @@ public static class API_AddressToCoords
         return coordinates;
     }
 
+    // This method will call the API and return the coordinates of the address
     private static async Task<TacoBellLocation> GetCoordinatesFromAddress(string address, string apiKey)
     {
         string url = $"https://api.opencagedata.com/geocode/v1/json?q={Uri.EscapeDataString(address)}&key={apiKey}";
@@ -43,12 +46,14 @@ public static class API_AddressToCoords
         }
     }
 
+    // This method will deserialize the JSON response from the API
     private static TacoBellLocation GetDeserializedModel(string results)
     {
         var response = JsonConvert.DeserializeObject<SingleResponseTacoBellLocationResponse>(results);
         return MapTacoBellLocationModel(response);
     }
 
+    // This method will map the JSON response to the TacoBellLocation model
     private static TacoBellLocation MapTacoBellLocationModel(SingleResponseTacoBellLocationResponse record)
     {
         TacoBellLocation tacoBellLocation = new TacoBellLocation();

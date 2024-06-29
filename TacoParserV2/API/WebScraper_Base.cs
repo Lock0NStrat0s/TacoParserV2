@@ -10,15 +10,17 @@ using System.Net.Http.Headers;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using TacoParserV2.Logger;
 
 namespace TacoParserV2;
 
 public abstract class WebScraper_Base
 {
-    // Url of any city in the US
-    // Url of any Canadian city
-    // Url of all Canadian cities
+    // Url of:  any city in the US
+    //          any Canadian city
+    //          all Canadian cities
     private string _url { get; set; } = "https://www.tacobell.ca/en/store-locator.html";
+    public static readonly ILog logger = new TacoLogger();
 
     protected WebScraper_Base()
     {
@@ -29,6 +31,7 @@ public abstract class WebScraper_Base
         _url = url;
     }
 
+    // This method will run the web scraper
     public virtual async Task RunWebScraper()
     {
         List<string> locations = new List<string>();
@@ -38,12 +41,13 @@ public abstract class WebScraper_Base
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
         await ConvertToGeoLocationUsingAPI(locations);
     }
 
+    // This method will convert the location to geo coordinates using an API
     protected virtual async Task ConvertToGeoLocationUsingAPI(List<string> locations)
     {
         List<TacoBellLocation> tbList = new List<TacoBellLocation>();
@@ -57,12 +61,14 @@ public abstract class WebScraper_Base
         SelectLocationAndWriteToCSV(tbList);
     }
 
+    // This method will select the location and write to a CSV file
     protected virtual void SelectLocationAndWriteToCSV(List<TacoBellLocation> tbList)
     {
         // Write the data to a CSV file to a location of your choice
         WriteToCsv(@"../../../CSV_Files/TempTacoBellLocations.csv", tbList);
     }
 
+    // This method will extract the Taco Bell locations from the page
     protected virtual async Task<List<string>> GetTacoBellLocations(string url)
     {
         var locations = new List<string>();
@@ -87,10 +93,13 @@ public abstract class WebScraper_Base
         return locations;
     }
 
+    // This method will extract the locations from the HTML content
     protected abstract void ExtractLocations(List<string> locations, HtmlNodeCollection locationNodes);
 
+    // This method will select the HTML nodes that contain the location information
     protected abstract HtmlNodeCollection SelectHTMLNodes(HtmlDocument document);
 
+    // This method will load the HTML content into HtmlAgilityPack
     protected virtual HtmlDocument LoadHTMLContent(string response)
     {
         HtmlDocument document = new HtmlDocument();
@@ -100,12 +109,13 @@ public abstract class WebScraper_Base
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
         return document;
     }
 
+    // This method will fetch the HTML content of the page
     protected virtual async Task<string> FetchHTMLContent(string url, HttpClient client)
     {
         try
@@ -114,20 +124,21 @@ public abstract class WebScraper_Base
         }
         catch (HttpRequestException e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
         catch (TaskCanceledException e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
         return null;
     }
 
+    // This method will set up the HttpClient headers
     protected virtual void SetupHttpClientDefaults(HttpClient client)
     {
         client.DefaultRequestHeaders.Accept.Clear();
@@ -135,6 +146,7 @@ public abstract class WebScraper_Base
         client.DefaultRequestHeaders.UserAgent.TryParseAdd("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36");
     }
 
+    // This method will write the data to a CSV file
     protected virtual void WriteToCsv(string filePath, List<TacoBellLocation> data)
     {
         using (var writer = new StreamWriter(filePath))

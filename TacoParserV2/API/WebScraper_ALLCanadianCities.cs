@@ -39,7 +39,7 @@ public class WebScraper_ALLCanadianCities : WebScraper_Base
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
         return locationNodes;
@@ -57,7 +57,7 @@ public class WebScraper_ALLCanadianCities : WebScraper_Base
         }
         else
         {
-            Console.WriteLine("No location nodes found.");
+            logger.LogError("No location nodes found.");
         }
     }
 }

@@ -39,7 +39,7 @@ public class WebScraper_SingleUSCity : WebScraper_Base
         }
         else
         {
-            Console.WriteLine("No location nodes found.");
+            logger.LogError("No location nodes found.");
         }
     }
 
@@ -54,7 +54,7 @@ public class WebScraper_SingleUSCity : WebScraper_Base
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
         return locationNodes;

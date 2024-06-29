@@ -1,12 +1,8 @@
-﻿using System;
-using System.Linq;
-using System.IO;
+﻿using DotNetEnv;
 using GeoCoordinatePortable;
-using TacoParserV2.Models;
-using TacoParserV2.Logger;
-using System.Collections.Generic;
-using DotNetEnv;
 using TacoParserV2.API;
+using TacoParserV2.Logger;
+using TacoParserV2.Models;
 
 namespace TacoParserV2;
 
@@ -93,8 +89,8 @@ class Program
                 isAllState = true;
                 break;
             default:
-                logger.LogError("Invalid selection.");
-                break;
+                logger.LogError("Invalid selection. Returning to main menu.");
+                return;
         }
 
         if (!isAllState)
@@ -108,7 +104,7 @@ class Program
     }
 
     // Overloaded method for running the web scraper and geocoding for Canadian cities and single US city
-    private static void BeginWebScrapingAndGeocoding(WebScraper_Base scraper)
+    private static async Task BeginWebScrapingAndGeocoding(WebScraper_Base scraper)
     {
         try
         {
@@ -121,7 +117,7 @@ class Program
     }
 
     // Overloaded method for running the web scraper and geocoding for all US state cities
-    private static void BeginWebScrapingAndGeocoding()
+    private static async Task BeginWebScrapingAndGeocoding()
     {
         try
         {
@@ -193,6 +189,10 @@ class Program
             }
         }
 
-        Console.WriteLine($"\nResults:\nThe two tacobells with the furthest distance in {location} are:\nName A: {locA.Name}\nLatitude: {locA.Location.Latitude}\tLongitude: {locA.Location.Longitude}\n\nName B: {locB.Name}\nLatitude: {locB.Location.Latitude}\tLongitude: {locB.Location.Longitude}\n\nTheir distance is {locDistance}m");
+        logger.LogResults($"\nResults:\nThe two tacobells with the furthest distance in {location} are:\n");
+        logger.LogResults($"\nName A: {locA.Name}\nLatitude: {locA.Location.Latitude}\tLongitude: {locA.Location.Longitude}\n");
+        logger.LogResults($"\nName B: {locB.Name}\nLatitude: {locB.Location.Latitude}\tLongitude: {locB.Location.Longitude}\n");
+        logger.LogResults($"\nTheir distance is {locDistance:F2}m");
+        Console.ForegroundColor = ConsoleColor.Green;
     }
 }

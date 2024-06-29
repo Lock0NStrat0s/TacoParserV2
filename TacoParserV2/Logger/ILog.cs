@@ -10,5 +10,6 @@ namespace TacoParserV2.Logger
         void LogInfo(string log);
         void LogDebug(string log);
         void LogResults(TacoBellLocation coordinates);
+        void LogResults(string log);
     }
 }

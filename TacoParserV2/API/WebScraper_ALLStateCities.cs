@@ -3,25 +3,29 @@ using CsvHelper.Configuration;
 using HtmlAgilityPack;
 using System.Globalization;
 using System.Net.Http.Headers;
+using TacoParserV2.Logger;
 using TacoParserV2.Models;
 
 namespace TacoParserV2.API;
 
 public static class WebScraper_ALLStateCities
 {
+    static readonly ILog logger = new TacoLogger();
+
+    // This method will run the web scraper to extract Taco Bell locations from a specific state
     public static async Task RunWebScraper()
     {
         // MODIFY THIS URL TO THE STATE YOU WANT TO EXTRACT LOCATIONS FROM
         string url = "https://locations.tacobell.com/al.html";
 
-        List<string> locations = new List<string>();
+    List<string> locations = new List<string>();
         try
         {
             locations = await GetTacoBellLocations(url);
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
         List<TacoBellLocation> tbList = new List<TacoBellLocation>();
@@ -39,6 +43,7 @@ public static class WebScraper_ALLStateCities
         WriteToCsv(@"../../../CSV_Files/TempTacoBellLocations.csv", tbList);
     }
 
+    // This method will extract the Taco Bell locations from the state
     private static async Task<List<string>> GetTacoBellLocations(string url)
     {
         var locations = new List<string>();
@@ -72,7 +77,7 @@ public static class WebScraper_ALLStateCities
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine($"Error: {e.Message}");
+                        logger.LogError($"Error: {e.Message}");
                     }
 
                     if (locationNodesInner != null)
@@ -96,22 +101,22 @@ public static class WebScraper_ALLStateCities
                     }
                     else
                     {
-                        Console.WriteLine("No inner location nodes found.");
+                        logger.LogError("No inner location nodes found.");
                     }
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Error: {e.Message}");
+                logger.LogError($"Error: {e.Message}");
             }
         }
 
         return locations;
     }
 
+    // This method will call the URL and load the HTML content into HtmlAgilityPack
     private static async Task<HtmlDocument> CallStringASyncResponse(string url, HttpClient client)
     {
-        // Fetch the HTML content of the page
         string response = null;
         try
         {
@@ -119,18 +124,17 @@ public static class WebScraper_ALLStateCities
         }
         catch (HttpRequestException e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
         catch (TaskCanceledException e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
-        // Load the HTML content into HtmlAgilityPack
         HtmlDocument document = new HtmlDocument();
         try
         {
@@ -138,12 +142,13 @@ public static class WebScraper_ALLStateCities
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            logger.LogError($"Error: {e.Message}");
         }
 
         return document;
     }
 
+    // This method will write the data to a CSV file
     private static void WriteToCsv(string filePath, List<TacoBellLocation> data)
     {
         using (var writer = new StreamWriter(filePath))

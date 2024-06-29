@@ -7,24 +7,36 @@
       "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\logger\\tacologger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\logger\\tacologger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\webscraper_allstatecities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\webscraper_allstatecities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\logger\\ilog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\logger\\ilog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\webscraper_allcanadiancities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\webscraper_allcanadiancities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\webscraper_singleuscity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\webscraper_singleuscity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\webscraper_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\webscraper_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\webscraper_singleuscity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\webscraper_singleuscity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\webscraper_allcanadiancities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\webscraper_allcanadiancities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\webscraper_allstatecities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\webscraper_allstatecities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\api\\api_addresstocoords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\api\\api_addresstocoords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|c:\\users\\moham\\onedrive\\desktop\\repos\\truecoders\\tacoparserv2\\tacoparserv2\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F1C7324D-14D3-4234-B642-2DD3EBA34833}|TacoParserV2\\TacoParserV2.csproj|solutionrelative:tacoparserv2\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 389,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,26 +59,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "ILog.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\Logger\\ILog.cs",
+              "RelativeDocumentMoniker": "TacoParserV2\\Logger\\ILog.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\Logger\\ILog.cs",
+              "RelativeToolTip": "TacoParserV2\\Logger\\ILog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T00:36:13.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TacoLogger.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\Logger\\TacoLogger.cs",
+              "RelativeDocumentMoniker": "TacoParserV2\\Logger\\TacoLogger.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\Logger\\TacoLogger.cs",
+              "RelativeToolTip": "TacoParserV2\\Logger\\TacoLogger.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAzwEcAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T00:32:23.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "API_AddressToCoords.cs",
+              "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\API_AddressToCoords.cs",
+              "RelativeDocumentMoniker": "TacoParserV2\\API\\API_AddressToCoords.cs",
+              "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\API_AddressToCoords.cs",
+              "RelativeToolTip": "TacoParserV2\\API\\API_AddressToCoords.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-29T00:12:11.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "WebScraper_ALLStateCities.cs",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\WebScraper_ALLStateCities.cs",
               "RelativeDocumentMoniker": "TacoParserV2\\API\\WebScraper_ALLStateCities.cs",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\WebScraper_ALLStateCities.cs",
               "RelativeToolTip": "TacoParserV2\\API\\WebScraper_ALLStateCities.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACYAAABMAAAA",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAAAJYAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T17:18:57.811Z"
+              "WhenOpened": "2024-06-28T17:18:57.811Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "WebScraper_ALLCanadianCities.cs",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\WebScraper_ALLCanadianCities.cs",
               "RelativeDocumentMoniker": "TacoParserV2\\API\\WebScraper_ALLCanadianCities.cs",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\WebScraper_ALLCanadianCities.cs",
               "RelativeToolTip": "TacoParserV2\\API\\WebScraper_ALLCanadianCities.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T18:14:19.169Z"
+              "WhenOpened": "2024-06-28T18:14:19.169Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -76,21 +129,23 @@
               "RelativeDocumentMoniker": "TacoParserV2\\API\\WebScraper_Base.cs",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\WebScraper_Base.cs",
               "RelativeToolTip": "TacoParserV2\\API\\WebScraper_Base.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABYAAAA",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAUwJQAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T13:57:58.993Z"
+              "WhenOpened": "2024-06-28T13:57:58.993Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "WebScraper_SingleUSCity.cs",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\WebScraper_SingleUSCity.cs",
               "RelativeDocumentMoniker": "TacoParserV2\\API\\WebScraper_SingleUSCity.cs",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\API\\WebScraper_SingleUSCity.cs",
               "RelativeToolTip": "TacoParserV2\\API\\WebScraper_SingleUSCity.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAA7wDMAAABQAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-28T03:56:03.217Z"
+              "WhenOpened": "2024-06-28T03:56:03.217Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -100,7 +155,7 @@
               "RelativeDocumentMoniker": "TacoParserV2\\Program.cs",
               "ToolTip": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\Program.cs",
               "RelativeToolTip": "TacoParserV2\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAALsAAAARAAAA",
+              "ViewState": "AQIAAKoAAAAAAAAAAAA1wLIAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-27T15:15:16.327Z",
               "EditorCaption": ""
@@ -113,7 +168,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Helper.cs",
               "DocumentMoniker": "C:\\Users\\moham\\OneDrive\\Desktop\\Repos\\TRUECODERS\\TacoParserV2\\TacoParserV2\\Helper.cs",
               "RelativeDocumentMoniker": "TacoParserV2\\Helper.cs",
