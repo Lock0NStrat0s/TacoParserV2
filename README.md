@@ -1,8 +1,8 @@
 # Taco Bell Location Scraper
 This project is a C# console application that:
-1. Scrapes Taco Bell's website for location addresses, converts these addresses into geographic coordinates using an API and stores the resulting data in a CSV file
-2. Parses through a CSV file, utilizes geolocation and logging 
-3. Implements unit testing with XUnit
+  1. Scrapes Taco Bell's website for location addresses, converts these addresses into geographic coordinates using an API and stores the resulting data in a CSV file
+  2. Parses through a CSV file, utilizes geolocation and logging 
+  3. Implements unit testing with XUnit
 
 ## Introduction
 The Taco Bell Location Scraper project aims to automate the process of collecting Taco Bell location addresses from their official website, converting these addresses to geographic coordinates (latitude and longitude), and saving the information in a CSV file.
