@@ -32,7 +32,8 @@ The folowing packages are installed from the NuGet Package Manager:
 
 ## Usage
 #### Configure API Key:
-- You need an API key from OpenCage Geocoder. Sign up on their [website](https://opencagedata.com/) to get your API key for testing purposes
+- You need an API key from OpenCage Geocoder
+- Sign up on their [website](https://opencagedata.com/) to get your API key for testing purposes
 
 #### Set the API key:
 - You can store this in an .ENV file using this format -- *API_KEY=YOUR_KEY* -- in the main project directory
