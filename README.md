@@ -22,7 +22,7 @@ This project demonstrates web scraping, API interaction, and data storage techni
 ### 3. Unit Testing:
   - Checks if address, latitude and longitude match their respective values
 
-## Install dependencies
+## Dependencies Used
 The following packages are installed from the NuGet Package Manager:
   - HtmlAgilityPack
   - CsvHelper
