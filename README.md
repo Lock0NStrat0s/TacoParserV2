@@ -10,16 +10,16 @@ Once stored, the data is parsed through to extract the name and location to be u
 This project demonstrates web scraping, API interaction, and data storage techniques in C#.
 
 ## Features
-1. Web Scraping and API:
+### 1. Web Scraping and API:
   - Scrapes location addresses from Taco Bell's website
   - Converts addresses to geographic coordinates using the OpenCage Geocoder API
   - Stores the address and coordinates in a CSV file
 
-2. GeoLocation:
+### 2. GeoLocation:
   - Finds the two Taco Bells that are the farthest apart from one another
   - Shows the distance between them
 
-3. Unit Testing:
+### 3. Unit Testing:
   - Checks if address, latitude and longitude match their respective values
 
 ## Install dependencies
