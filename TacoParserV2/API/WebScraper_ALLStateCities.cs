@@ -11,6 +11,7 @@ namespace TacoParserV2.API;
 public static class WebScraper_ALLStateCities
 {
     static readonly ILog logger = new TacoLogger();
+    static List<string> Locations { get; set; } = new List<string>();
 
     // This method will run the web scraper to extract Taco Bell locations from a specific state
     public static async Task RunWebScraper()
@@ -18,10 +19,9 @@ public static class WebScraper_ALLStateCities
         // MODIFY THIS URL TO THE STATE YOU WANT TO EXTRACT LOCATIONS FROM
         string url = "https://locations.tacobell.com/al.html";
 
-    List<string> locations = new List<string>();
         try
         {
-            locations = await GetTacoBellLocations(url);
+            await GetTacoBellLocations(url);
         }
         catch (Exception e)
         {
@@ -35,7 +35,7 @@ public static class WebScraper_ALLStateCities
         int recordsToExtract = 4;
         for (int i = 0; i < recordsToExtract; i++)
         {
-            var locModel = await API_AddressToCoords.RunAPI(locations[i]);
+            var locModel = await API_AddressToCoords.RunAPI(Locations[i]);
             tbList.Add(locModel);
         }
 
@@ -44,10 +44,8 @@ public static class WebScraper_ALLStateCities
     }
 
     // This method will extract the Taco Bell locations from the state
-    private static async Task<List<string>> GetTacoBellLocations(string url)
+    private static async Task GetTacoBellLocations(string url)
     {
-        var locations = new List<string>();
-
         using (HttpClient client = new HttpClient())
         {
             // Set up HttpClient headers
@@ -62,56 +60,62 @@ public static class WebScraper_ALLStateCities
             try
             {
                 locationNodesOuter = document.DocumentNode.SelectNodes("//a[contains(@class, 'Directory-listLink')]");
-
-                foreach (var node in locationNodesOuter)
-                {
-                    string urlInner = "https://locations.tacobell.com/" + node.GetAttributeValue("href", string.Empty);
-
-                    HtmlDocument documentInner = await CallStringASyncResponse(urlInner, client);
-
-                    HtmlNodeCollection locationNodesInner = null;
-                    try
-                    {
-                        //ALL US STATE LOCATIONS
-                        locationNodesInner = documentInner.DocumentNode.SelectNodes("//div[contains(@class, 'AddressRow')]");
-                    }
-                    catch (Exception e)
-                    {
-                        logger.LogError($"Error: {e.Message}");
-                    }
-
-                    if (locationNodesInner != null)
-                    {
-                        int count = 0;
-                        string temp = "";
-
-                        // THIS WILL EXTRACT ALL LOCATIONS IN THE STATE YOU SELECT
-                        // LIMITED TO 1 REQUEST PER SECOND USING THE FREE VERSION OF THE API
-                        foreach (var locNode in locationNodesInner)
-                        {
-                            temp += locNode.InnerText.Trim() + " ";
-                            count++;
-                            if (count % 3 == 0)
-                            {
-                                temp += locNode.InnerText.Trim();
-                                locations.Add(temp);
-                                temp = "";
-                            }
-                        }
-                    }
-                    else
-                    {
-                        logger.LogError("No inner location nodes found.");
-                    }
-                }
+                await GatherOuterNodes(Locations, client, locationNodesOuter);
             }
             catch (Exception e)
             {
                 logger.LogError($"Error: {e.Message}");
             }
         }
+    }
 
-        return locations;
+    private static async Task GatherOuterNodes(List<string> locations, HttpClient client, HtmlNodeCollection locationNodesOuter)
+    {
+        foreach (var node in locationNodesOuter)
+        {
+            string urlInner = "https://locations.tacobell.com/" + node.GetAttributeValue("href", string.Empty);
+
+            HtmlDocument documentInner = await CallStringASyncResponse(urlInner, client);
+
+            HtmlNodeCollection locationNodesInner = null;
+            try
+            {
+                //ALL US STATE LOCATIONS
+                locationNodesInner = documentInner.DocumentNode.SelectNodes("//div[contains(@class, 'AddressRow')]");
+            }
+            catch (Exception e)
+            {
+                logger.LogError($"Error: {e.Message}");
+            }
+
+            if (locationNodesInner != null)
+            {
+                int count = 0;
+                string temp = "";
+                GatherInnerNodes(locations, locationNodesInner, ref count, ref temp);
+            }
+            else
+            {
+                logger.LogError("No inner location nodes found.");
+            }
+        }
+    }
+
+    private static void GatherInnerNodes(List<string> locations, HtmlNodeCollection locationNodesInner, ref int count, ref string temp)
+    {
+        // THIS WILL EXTRACT ALL LOCATIONS IN THE STATE YOU SELECT
+        // LIMITED TO 1 REQUEST PER SECOND USING THE FREE VERSION OF THE API
+        foreach (var locNode in locationNodesInner)
+        {
+            temp += locNode.InnerText.Trim() + " ";
+            count++;
+            if (count % 3 == 0)
+            {
+                temp += locNode.InnerText.Trim();
+                locations.Add(temp);
+                temp = "";
+            }
+        }
     }
 
     // This method will call the URL and load the HTML content into HtmlAgilityPack
