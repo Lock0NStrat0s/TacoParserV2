@@ -12,7 +12,7 @@ This project demonstrates web scraping, API interaction, and data storage techni
 ## Features
 ### 1. Web Scraping and API:
   - Scrapes location addresses from Taco Bell's website
-  - Converts addresses to geographic coordinates using the OpenCage Geocoder API
+  - Converts addresses to geographic coordinates using the [OpenCage Geocoder API](https://opencagedata.com/)
   - Stores the address and coordinates in a CSV file
 
 ### 2. GeoLocation:
