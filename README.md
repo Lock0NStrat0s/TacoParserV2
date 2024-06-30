@@ -22,7 +22,7 @@ This project demonstrates web scraping, API interaction, and data storage techni
   -  Checks if address, latitude and longitude match their respective values
 
 ## Install dependencies
-The folowing packages are installed from the NuGet Package Manager:
+The following packages are installed from the NuGet Package Manager:
   - HtmlAgilityPack
   - CsvHelper
   - Newtonsoft.Json
@@ -52,3 +52,13 @@ The folowing packages are installed from the NuGet Package Manager:
     + URL adjustable: Pick from these [Taco Bell State Locations](https://locations.tacobell.com/)
     + Use the URL of the State with the format -- *`https://locations.tacobell.com/[STATE].html`* --
     + Example: https://locations.tacobell.com/al.html
+
+## Images from Console
+### Main Menu:
+![Main Menu](Demo_Images/mainmenuImg.png)
+
+### Single US City:
+![US City Location](Demo_Images/US_City_LocationsImg.png)
+
+### All Canadian Cities:
+![All Canadian Cities](Demo_Images/CanadaLocationsImg.png)
