@@ -58,8 +58,8 @@ The following packages are installed from the NuGet Package Manager:
 ### Main Menu:
 ![Main Menu](Demo_Images/mainmenuImg.png)
 
-### Single US City:
+### Web Scraping Single US City:
 ![US City Location](Demo_Images/US_City_LocationsImg.png)
 
-### All Canadian Cities:
+### Geolocating Distance Between All Canadian Cities:
 ![All Canadian Cities](Demo_Images/CanadaLocationsImg.png)
