@@ -1,15 +1,4 @@
-﻿using CsvHelper.Configuration;
-using CsvHelper;
-using HtmlAgilityPack;
-using TacoParserV2.Models;
-using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using System.Net.Http.Headers;
+﻿using HtmlAgilityPack;
 
 namespace TacoParserV2;
 

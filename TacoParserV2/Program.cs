@@ -1,9 +1,4 @@
-﻿using DotNetEnv;
-using GeoCoordinatePortable;
-using TacoParserV2.API;
-using TacoParserV2.ApplicationManager;
-using TacoParserV2.Logger;
-using TacoParserV2.Models;
+﻿using TacoParserV2.ApplicationManager;
 
 namespace TacoParserV2;
 
@@ -16,7 +11,7 @@ class Program
         bool isRunning = true;
         do
         {
-            isRunning = Application.RunApplication(isRunning);
+            isRunning = Application.RunApplication();
 
             Console.Write("\nPress any key to continue: ");
             Console.ReadKey();

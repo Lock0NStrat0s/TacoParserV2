@@ -1,8 +1,4 @@
-using System;
-using System.Diagnostics.Metrics;
 using TacoParserV2;
-using Xunit;
-using static TacoParserV2.Responses.SingleResponseTacoBellLocationResponse;
 
 namespace TacoParserTests;
 

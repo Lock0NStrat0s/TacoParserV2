@@ -1,5 +1,4 @@
-﻿using System;
-using TacoParserV2.Models;
+﻿using TacoParserV2.Models;
 namespace TacoParserV2.Logger
 {
     public interface ILog

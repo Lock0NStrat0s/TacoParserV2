@@ -1,11 +1,7 @@
-﻿using TacoParserV2.Models;
-using TacoParserV2.Responses;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+﻿using Newtonsoft.Json;
 using TacoParserV2.Logger;
+using TacoParserV2.Models;
+using TacoParserV2.Responses;
 
 public static class API_AddressToCoords
 {
@@ -16,7 +12,7 @@ public static class API_AddressToCoords
     {
         // SIGN UP FOR AN ACCOUNT AT https://opencagedata.com/users/sign_up TO GET YOUR API KEY FOR TESTING
         string apiKey = Environment.GetEnvironmentVariable("API_KEY");
-        
+
         TacoBellLocation coordinates = new TacoBellLocation();
         try
         {

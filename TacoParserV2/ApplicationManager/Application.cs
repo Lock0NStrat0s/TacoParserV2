@@ -1,10 +1,5 @@
 ﻿using DotNetEnv;
 using GeoCoordinatePortable;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TacoParserV2.API;
 using TacoParserV2.Logger;
 using TacoParserV2.Models;
@@ -17,7 +12,7 @@ class Application
     const string csvPath = "TempTacoBellLocations.csv";     // Generated locations of temporary Taco Bell locations using the web scraper and API
     const string csvPath1 = "TacoBellCanada.csv";           // Generated locations of all Canadian Taco Bell locations
     const string csvPath2 = "TacoBellAlabamaLocations.csv"; // Generated locations of all Alabama Taco Bell locations
-    public static bool RunApplication(bool isRunning)
+    public static bool RunApplication()
     {
         string userInput = Helper.GetResponse("Welcome to the Taco Bell Location Finder!\n\nOptions:\n1. Find the two Taco Bells that are the farthest apart from one another\n2. Run Web Scraper and Geo Coder API (THIS REQUIRES YOU TO ENTER YOUR OWN API_KEY FOR OPENCAGE GEOCODER - REFER TO README)\n\nYour selection: ");
 
@@ -33,10 +28,10 @@ class Application
         }
         else
         {
-            isRunning = false;
+            return false;
         }
 
-        return isRunning;
+        return true;
     }
 
     private static void SelectFile()

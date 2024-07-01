@@ -1,17 +1,9 @@
-﻿using Sprache;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TacoParserV2.Responses;
+﻿namespace TacoParserV2.Responses;
 
 public class SingleResponseTacoBellLocationResponse
 {
-        public List<Result> results { get; set; }
-        public Status status { get; set; }
+    public List<Result> results { get; set; }
+    public Status status { get; set; }
 
     public class Result
     {

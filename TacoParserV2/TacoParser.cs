@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using TacoParserV2.Logger;
+﻿using TacoParserV2.Logger;
 using TacoParserV2.Models;
 
 namespace TacoParserV2;

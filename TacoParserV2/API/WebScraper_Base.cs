@@ -1,16 +1,10 @@
-﻿using CsvHelper.Configuration;
-using CsvHelper;
+﻿using CsvHelper;
+using CsvHelper.Configuration;
 using HtmlAgilityPack;
-using TacoParserV2.Models;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Net.Http.Headers;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using TacoParserV2.Logger;
+using TacoParserV2.Models;
 
 namespace TacoParserV2;
 
@@ -86,7 +80,7 @@ public abstract class WebScraper_Base
 
             // Select the nodes that contain the location information
             HtmlNodeCollection locationNodes = SelectHTMLNodes(document);
-            
+
             ExtractLocations(locations, locationNodes);
         }
 
