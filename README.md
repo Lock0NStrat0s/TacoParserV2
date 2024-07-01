@@ -10,19 +10,20 @@ Once stored, the data is parsed through to extract the name and location to be u
 This project demonstrates web scraping, API interaction, and data storage techniques in C#.
 
 ## Features
-1. Web Scraping and API:
+### 1. Web Scraping and API:
   - Scrapes location addresses from Taco Bell's website
-  - Converts addresses to geographic coordinates using the OpenCage Geocoder API
+  - Converts addresses to geographic coordinates using the [OpenCage Geocoder API](https://opencagedata.com/)
   - Stores the address and coordinates in a CSV file
 
-2. GeoLocation:
-  - Finds the two Taco Bells that are the farthest apart from one another and shows the distance between them
+### 2. GeoLocation:
+  - Finds the two Taco Bells that are the farthest apart from one another
+  - Shows the distance between them
 
-3. Unit Testing:
-  -  Checks if address, latitude and longitude match their respective values
+### 3. Unit Testing:
+  - Checks if address, latitude and longitude match their respective values
 
-## Install dependencies
-The folowing packages are installed from the NuGet Package Manager:
+## Dependencies Used
+The following packages are installed from the NuGet Package Manager:
   - HtmlAgilityPack
   - CsvHelper
   - Newtonsoft.Json
@@ -52,3 +53,13 @@ The folowing packages are installed from the NuGet Package Manager:
     + URL adjustable: Pick from these [Taco Bell State Locations](https://locations.tacobell.com/)
     + Use the URL of the State with the format -- *`https://locations.tacobell.com/[STATE].html`* --
     + Example: https://locations.tacobell.com/al.html
+
+## Images from Console
+### Main Menu:
+![Main Menu](Demo_Images/mainmenuImg.png)
+
+### Web Scraping Single US City:
+![US City Location](Demo_Images/US_City_LocationsImg.png)
+
+### Geolocating Distance Between All Canadian Cities:
+![All Canadian Cities](Demo_Images/CanadaLocationsImg.png)
